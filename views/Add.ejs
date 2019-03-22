@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+            <div id="navbar">
+                    <div id="navtitle">
+                            <a href="/" id="navpro">YelpCamp</a>
+                    </div> 
+                    <div id="navbar-buttons">        
+                    <a href="#" id="navuser">Signed as <%=username %></a>        
+                    <a href="/signout" id="navlogout">Sign Out</a>
+                   </div>
+             </div>
+                <h1 id="addnew">Add a new campground</h1>
+<div id="frm">
+<form action="/campground" method="POST" onsubmit="return check()">
+ <input type="text" name="name" id="cmpname" placeholder="Campground Name"><br>
+ <input type="text" name="url" id="cmpurl" placeholder="Campground URL"><br>
+ <textarea name="desc" id="cmpdesc" placeholder="Campground description"></textarea>
+ <input type="submit" value="ADD" id="sub">
+</form>
+</div>
+<a href="/campground" id="goback">Go back</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+                <h1 id="addnew">Edit campground</h1>
+<div id="frm">
+<form action="/campground/<%=result[0].Name%>/Update?_method=PUT" method="POST">
+ <input type="text" name="name" id="cmpname" value="<%=result[0].Name%>"><br>
+ <input type="text" name="url" id="cmpurl" value="<%=result[0].URL%>"><br>
+ <textarea name="desc" id="cmpdesc"><%=result[0].Description%></textarea>
+ <input type="submit" value="Update" id="sub">
+</form>
+</div>
+<a href="/campground/<%=result[0].Name%>" id="goback">Go back</a>
+</body>
+</html>

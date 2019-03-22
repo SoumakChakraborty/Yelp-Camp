@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+                    <div id="navbar">
+                            <div id="navtitle">
+                                    <a href="/" id="navpro">YelpCamp</a>
+                            </div> 
+                            <div id="navbar-buttons">
+                            <% if(state=="not logged in") {%>          
+                              <a href="/signin" id="navlogin">Sign In</a>
+                              <a href="/signup" id="navsign">Sign Up</a>
+                              <%}else {%>
+                                <a href="#" id="navuser">Signed as <%=username %></a>
+                                <a href="/signout" id="navlogout">Sign Out</a>
+                                <%}%> 
+                           </div>
+                     </div>
+             <div id="together"> 
+                <div id="showlist">
+                 <p>Yelp Camp</p>            
+                 <ul>
+                     <li id="first" class="active">Category 1</li>
+                     <li>Category 2</li>
+                     <li id="last">Category 3</li>
+                 </ul>
+                </div>
+                 <div id="showimg1">
+                 <img src="<%=campres[0].URL%>" id="Yelpimg1">
+                 <p class="Name"><a href="#" id="showname"><%=campres[0].Name%></a></p>
+                 <p class="Name"><%=campres[0].Description%></p>
+                <%if(username==campres[0].user){%> 
+                 <div id="manipulate">    
+                 <a href="/campground/<%=campres[0].Name%>/Update" id="editcamp">Edit campground</a>
+                 </div>
+                 <form action="/campground/<%=campres[0].Name%>/Update?_method=PUT" method="POST" id="deleteform">
+                  <input type="submit" value="Delete campground" id="delete"> 
+                 </form>
+                 <%}%>
+                </div>
+              </div>
+                <div id="comments">
+                <a href="/campground/<%=campres[0].Name%>/comment" id="addcom">Comment</a>
+                <%for(var i=0;i<commentres.length;i++){%>
+                        <p><%=commentres[i].uname%> - <%=commentres[i].Comment%></p>
+                    <%if(username==commentres[i].uname){%> 
+                       <div id="editcomment">     
+                        <a href="/campground/<%=commentres[i].commentID%>/commentUpdate" id="editcom">Edit comment</a>
+                      </div> 
+                      <form action="/campground/<%=commentres[i].commentID%>/commentdelete?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete comment" id="deletecom"> 
+                      </form>
+                    <%}%>  
+                <%}%>  
+                </div>
+                <a href="/campground" id="goback">Go back</a>
+<% include partials/footer %>     

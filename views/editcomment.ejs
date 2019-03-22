@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="/validcom.js"></script>
+    </head>
+    <body>            
+             <h1 id="addnew">Edit comment</h1>
+<div id="frm">
+<form action="/campground/<%=result[0].commentID%>/commentUpdate?_method=PUT" method="POST">
+<textarea name="comment" id="cmpdesc"><%=result[0].Comment%></textarea>
+ <input type="submit" value="Update" id="sub">
+</form>
+</div>
+<a href="/campground" id="goback">Go back</a>
+</body>
+</html>

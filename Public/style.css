@@ -1,0 +1,529 @@
+#showtext
+{
+    color:white;
+    font-weight:800;
+}
+.welcome1
+{
+    background:url("campingmountain.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.welcome2
+{
+    background:url("bonfire.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.welcome3
+{
+    background:url("camping.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.welcome4
+{
+    background:url("tent.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#camp
+{
+    background:rgb(230, 228, 228);
+    border:5px rgb(230, 228, 228) solid;
+    padding:20px;
+    border-radius:3px;
+    width:60%;
+    margin:auto;
+    margin-top:2%;
+}
+p
+{
+    font-family:Source Sans Pro;
+    font-weight:800;
+}
+#frm
+{
+    width:40%;
+    padding:60px;
+    height:35%;
+    margin:auto;
+    margin-top:2%;
+}
+#cmpname
+{
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    margin-left:90px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#username
+{
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    margin-left:90px;
+    border:1px rgb(240, 239, 239) solid;
+}
+
+#sub
+{
+    background: white;
+    padding:10px;
+    border:1px #4285F4 solid;
+    border-radius:5px;
+    width:80%;
+    margin-top:15px;
+    margin-left:90px;
+    font-family:Source Sans Pro;
+    font-weight:800;
+    color:#4285F4;
+}
+#sub:hover
+{
+    background:gainsboro;
+}
+#cmpurl
+{
+    margin-top:15px;
+    margin-left:90px;
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#password
+{
+    margin-top:15px;
+    margin-left:90px;
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#retype
+{
+    margin-top:15px;
+    margin-left:90px;
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#cmpdesc
+{
+    margin-top:15px;
+    margin-left:90px;
+    width:80%;
+    height:60%;
+    padding:10px;
+    border-radius:5px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#yelpimg
+{
+    width:100%;
+}
+#name
+{
+    font-family:Source Sans Pro; 
+}
+#view{
+    text-decoration:none;
+    font-family:Source sans pro;
+    color:white;
+    font-weight:600;
+}
+
+h1{
+   font-family:Source Sans Pro;
+   font-weight:800;
+}
+.h1_hover
+{
+    color:orangered;
+}
+#camp h1
+{
+    color:#263238;
+   font-size:50px;
+   margin-left:60px;
+   padding:3px;
+}
+#camp p
+{
+    color:#263238;
+    font-family:Source Sans Pro;
+   margin-left:65px;
+   width:70%;
+}
+
+span
+{
+    font-family:Source Sans Pro;
+    font-weight:800;
+}
+#showimg
+{
+    margin-top:50px;
+    margin-left:7%;
+    border:1px rgb(226, 225, 225) solid;
+    border-radius:3px;
+    width:20%;
+    height:285px;
+    text-align: center;
+}
+.showerror
+{
+    background:rgb(250, 197, 197);
+    padding:12px;
+    color:brown;
+    border-radius:5px;
+    width:55%;
+    font-weight:600;
+    margin: auto;
+    font-family: Source sans pro;
+}
+.showsuccess
+{
+    background:rgb(193, 247, 193);
+    padding:12px;
+    color:green;
+    border-radius:5px;
+    width:55%;
+    font-weight:600;
+    margin: auto;
+    margin-top:2%;
+    font-family: Source sans pro;
+}
+#camp a
+{
+    margin-left:65px;
+}
+
+#navbar
+{
+    background:rgb(250, 250, 250);
+    border-bottom:2px rgb(243, 240, 240) solid;
+    width:100%;
+    padding-top:8px;
+    padding-left:8px;
+    border-radius:5px;
+}
+#navpro
+{
+    color:rgb(138, 135, 135);
+    text-decoration:none;
+    font-family:Titillium Web;
+    font-weight:400;
+}
+#navbar-buttons
+{
+    width:28%;
+    padding:5px;
+    margin-left:auto;
+}
+#navtitle
+{
+    float: left;
+}
+#navlogin
+{
+    color:rgb(138, 135, 135);
+    text-decoration:none;
+    font-family:Titillium Web;
+    font-weight:400;
+}
+#navsign
+{
+    color:rgb(138, 135, 135);
+    text-decoration:none;
+    font-family:Titillium Web;
+    font-weight:400;
+    margin-left:3%;
+}
+#navlogout
+{
+    color:rgb(138, 135, 135);
+    text-decoration:none;
+    font-family:Titillium Web;
+    font-weight:400;
+    margin-left:0;
+
+}
+.Name
+{
+    text-align: left;
+}
+#showname
+{
+    text-decoration: none;
+    color:#42a5f5;
+    font-family: Source sans pro;
+}
+#showname:hover
+{
+    text-decoration: underline;
+}
+#navuser
+{
+    color:rgb(138, 135, 135);
+    text-decoration:none;
+    font-family:Titillium Web;
+    font-weight:400;
+    margin-left:5%;
+}
+h4
+{
+    margin-right:80%;
+    font-family:Source sans pro;
+}
+a h4:hover
+{
+    text-decoration:underline;
+}
+.back
+{
+    text-decoration:none;
+    background:#42a5f5;
+    text-align:center;
+    border:2px #42a5f5 solid;
+    color:white;
+    padding:1.1%;
+    border-radius:3px;
+    font-family:Source sans pro;
+    font-weight:400;
+    margin-top:5px;
+}
+#addcamp
+{
+    background:white;
+    text-align:center;
+    border:1px #42a5f5 solid;
+    border-radius:3px;
+    margin-top:5px;
+    width:40%;
+    padding:1.2%;
+}
+#addcamp span
+{
+    color: #42a5f5;
+    font-family:Source sans pro;
+    font-weight:400;
+}
+#addcamp:hover
+{
+    background:gainsboro;
+}
+#addcamp span:hover
+{
+    font-weight:600;
+}
+#addnew
+{
+    margin-top:0;
+    margin-left:40%;
+}
+#viewcamp
+{
+    text-align:center;
+    padding:10px;
+    border:1px rgb(77, 218, 77) solid;
+    background:rgb(77, 218, 77); 
+    border-radius:5px;
+    width:155px;
+    margin:auto;
+    margin-top:270px;
+}
+#goback
+{
+    text-decoration:none;
+    color:#42a5f5;
+    margin:0;
+}
+#buttons
+{
+    width:80%;
+}
+#back
+{
+    text-decoration:none;
+    text-align:center;
+    color:white;
+    font-family:Source sans pro;
+    font-weight:400;
+}
+#moreinfo
+{
+    background: #0d47a1;
+    padding:7px;
+    border:1px #0d47a1 solid;
+    border-radius:5px;
+    width:35%;
+    margin:auto;
+    padding:12px;
+}
+#showimg p
+{
+    width:45%;
+    margin-left:25%;
+}
+li
+{
+    list-style:none;
+    border:1px gainsboro solid;
+    width:80%;
+    padding:10px;
+}
+
+#first
+{
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+#last
+{
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.active
+{
+    background:#4285F4;
+    color:white;
+    border:1px #4285F4 solid;
+}
+#showtext
+{
+    margin-left:5%;
+}
+#yelpimg1
+{
+    width:100%;
+    height:50%;
+}
+#showspecific
+{
+    margin-top:2%;
+}
+#showimg1
+{
+    border:1px rgb(226, 225, 225) solid;
+    border-radius:5px;
+    width:52%;
+    text-align: center;
+    margin-left:35%;
+    padding-bottom:12px;
+    margin-top:2%;
+}
+#editcamp
+{
+    text-decoration:none;
+    text-align:center;
+    color:white;
+    font-family:Source sans pro;
+    font-weight:400;
+}
+#editcom
+{
+    text-decoration:none;
+    color:white;
+    font-family:Source sans pro;
+    font-weight:400;
+}
+#delete
+{
+    background: white;
+    padding:7px;
+    background: #f44336;
+    border:1px #f44336 solid;
+    border-radius:5px;
+    width:135px;
+    margin-top:20px;
+    margin-left:4px;
+    font-family:Source Sans Pro;
+    font-weight:800;
+    color:white;
+}
+#together ul{
+    display:inline;
+}
+#manipulate
+{
+    background: #f9a825;
+    padding:5px;
+    border:1px #f9a825 solid;
+    color:white;
+    border-radius:5px;
+    font-family:Source sans pro;
+    font-weight:400;
+    width:125px;
+    margin:auto;
+}
+#editcomment
+{
+    background: #f9a825;
+    padding:5px;
+    border:1px #f9a825 solid;
+    color:white;
+    border-radius:5px;
+    font-family:Source sans pro;
+    font-weight:400;
+    width:100px;
+    margin:0;
+    text-align:center;
+}
+#deletecom
+{
+    background: white;
+    padding:7px;
+    background: #f44336;
+    border:1px #f44336 solid;
+    border-radius:5px;
+    width:110px;
+    margin-top:20px;
+    font-family:Source Sans Pro;
+    font-weight:800;
+    color:white;
+}
+#showimg1 #showuser
+{
+    width:35%;
+}
+#showcontent
+{
+    text-align: left;
+}
+#showusercomment
+{
+    font-weight:400;
+}
+#comments
+{
+    background:rgb(243, 242, 242);
+    width:50%;
+    margin-left:35%;
+    margin-top:5%;
+    border:1px rgb(226, 225, 225) solid;
+    border-radius:5px;
+    padding:1.2%;
+}
+#addcom
+{
+    background:#0F9D66;
+    text-align:center;
+    border:5px #0F9D66 solid;
+    color:white;
+    border-radius:3px;
+    font-family:Source sans pro;
+    font-weight:400;
+    margin-left:2%;
+    width:15%;
+    text-decoration:none;
+}
+#showlist
+{
+    width:25%;
+    float: left;
+}

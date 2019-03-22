@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+    <%if(error&&error.length>0){%>    
+     <div class="showerror"><%=error%></div>
+    <%}%>
+    <%if(success&&success.length>0){%>    
+        <div class="showsuccess"><%=success%></div>
+    <%}%>        
+    <h1 id="addnew">Sign In</h1>
+<div id="frm">
+<form action="/signin" method="POST">
+ <input type="email" name="username" id="cmpname" placeholder="Username"><br>
+ <input type="password" name="pass" id="cmpurl" placeholder="Password"><br>
+ <input type="submit" value="Sign In" id="sub"><br>
+ <a href="/forgotpass" id="goback">Forgot password</a>
+</form>
+</div>
+<a href="/campground" id="goback">Go back</a>
+</body>
+</html>

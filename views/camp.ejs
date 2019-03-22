@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+                    <div id="navbar">
+                            <div id="navtitle">
+                                    <a href="/" id="navpro">YelpCamp</a>
+                            </div> 
+                            <div id="navbar-buttons">
+                            <% if(state=="not logged in") {%>          
+                              <a href="/signin" id="navlogin">Sign In</a>
+                              <a href="/signup" id="navsign">Sign Up</a>
+                              <%}else {%>
+                                <a href="#" id="navuser">Signed as <%=username %></a>
+                                <a href="/signout" id="navlogout">Sign Out</a>
+                                <%}%> 
+                           </div>
+                     </div>
+                    <%if(success&&success.length>0){%> 
+                     <div class="showsuccess"><%=success%></div>
+                    <%}%> 
+<div id="camp">
+  <h1>This is the campgrounds page</h1>
+  <p>View our hand-picked campgrounds from all over the world</p>
+  <button id="addcamp"><span>Add a new campground</span></button>
+</div>
+<script>
+  var x=document.querySelector("#addcamp");
+  x.addEventListener("click",function()
+  {
+     window.location.href="/add";
+  });
+</script>
+<%for(var i=0;i<camp.length;i++){%>
+        <div id="showimg">  
+            <img src="<%=camp[i].URL%>" id="yelpimg">
+            <p><%=camp[i].Name%></p>
+            <div id="moreinfo">
+            <a href="/campground/<%=camp[i].Name%>" id="back">More Info</a>
+            </div>
+        </div>    
+      <%}%>
+      <% include partials/footer %>     
