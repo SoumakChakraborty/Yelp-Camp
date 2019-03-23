@@ -3,6 +3,7 @@ var Router=express.Router();
 var conn=require("../Campground");
 var encrypt=require("../modules/Encrypt");
 var camp=[];
+var username="";
 Router.get("/campground/:id/comment",function(req,res)
 {
     var IP=req.connection.remoteAddress;
@@ -16,7 +17,14 @@ Router.get("/campground/:id/comment",function(req,res)
            res.redirect("/signin");
         }
         else
-         res.render("comment",{type:req.params.id,username:result[0].uname}); 
+        {
+            conn.query("select * from user where username='"+result[0].uname+"'",function(err,uresult,fields)
+           {
+               username="";
+              username=username+uresult[0].Fname+" "+uresult[0].Lname;
+              res.render("comment",{type:req.params.id,username:username,usermail:result[0].uname});
+           });
+        } 
     });
 });
 Router.post("/campground/:id/addcomment",function(req,res)

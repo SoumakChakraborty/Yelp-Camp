@@ -51,8 +51,26 @@ p
     margin:auto;
     margin-top:2%;
 }
+#cmpfirst
+{
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    margin-left:90px;
+    border:1px rgb(240, 239, 239) solid;
+}
+#cmplast
+{
+    margin-top:15px;
+    width:80%;
+    padding:10px;
+    border-radius:5px;
+    margin-left:90px;
+    border:1px rgb(240, 239, 239) solid;
+}
 #cmpname
 {
+    margin-top:15px;
     width:80%;
     padding:10px;
     border-radius:5px;
@@ -221,7 +239,7 @@ span
 }
 #navbar-buttons
 {
-    width:28%;
+    width:370px;
     padding:5px;
     margin-left:auto;
 }
@@ -246,12 +264,25 @@ span
 }
 #navlogout
 {
-    color:rgb(138, 135, 135);
-    text-decoration:none;
-    font-family:Titillium Web;
-    font-weight:400;
-    margin-left:0;
-
+    list-style:none;
+    font-family: PT sans;
+    border-bottom:1px gainsboro solid;
+    border-left:1px gainsboro solid;
+    border-right:1px gainsboro solid;
+    border-radius:3px;
+}
+#navlogout a
+{
+    text-decoration: none;
+    color:grey;
+}
+#navlogout:hover
+{
+   background:gainsboro;
+}
+#navlogout:hover a
+{
+    color:rgb(124, 124, 202);
 }
 .Name
 {
@@ -370,7 +401,7 @@ a h4:hover
     width:45%;
     margin-left:25%;
 }
-li
+.listitem
 {
     list-style:none;
     border:1px gainsboro solid;
@@ -526,4 +557,102 @@ li
 {
     width:25%;
     float: left;
+}
+#showlist1
+{
+    width:170px;
+    margin-top:1px;
+    margin-left:auto;
+}
+#top
+{
+    list-style:none;
+    font-family: PT sans;
+    border-top:1px gainsboro solid;
+    border-left:1px gainsboro solid;
+    border-right:1px gainsboro solid;
+    border-radius:3px;
+}
+#middle
+{
+    list-style:none;
+    font-family: PT sans;
+    border-left:1px gainsboro solid;
+    border-right:1px gainsboro solid;
+}
+#bottom
+{
+    list-style:none;
+    font-family: PT sans;
+    border-left:1px gainsboro solid;
+    border-right:1px gainsboro solid;
+    border-radius:3px;
+}
+.userlist
+{
+    padding:20px;
+    border-radius:2px;
+    background: white;
+    display: none;
+}
+.showuserlist
+{
+    padding:20px;
+    border-radius:2px;
+    background: white;
+}
+#top a
+{
+    text-decoration: none;
+    color:grey;
+}
+#middle a
+{
+    text-decoration: none;
+    color:grey;
+}
+#bottom a
+{
+    text-decoration: none;
+    color:grey;
+}
+#username
+{
+    font-weight:800;
+    text-decoration:none;
+    margin-left:0;
+    border:0;
+}
+#usernamediv
+{
+    border:1px yellow solid;
+    width:180px;
+    padding:10px;
+    border-radius:5px;
+    text-align: center;
+
+}
+#top:hover
+{
+   background:gainsboro;
+}
+#middle:hover
+{
+   background:gainsboro;
+}
+#bottom:hover
+{
+   background:gainsboro;
+}
+#top:hover a
+{
+    color:rgb(124, 124, 202);
+}
+#middle:hover a
+{
+    color:rgb(124, 124, 202);
+}
+#bottom:hover a
+{
+    color:rgb(124, 124, 202);
 }

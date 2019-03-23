@@ -3,6 +3,7 @@ var Router=express.Router();
 var conn=require("../Campground");
 var encrypt=require("../modules/Encrypt");
 var uname="";
+var username="";
 Router.get("/add",function(req,res)
 {
   var IP=req.connection.remoteAddress;
@@ -16,7 +17,14 @@ Router.get("/add",function(req,res)
            res.redirect("/signin");
         }
         else
-          res.render("Add",{username:result[0].uname});
+        {
+          conn.query("select * from user where username='"+result[0].uname+"'",function(err,uresult,fields)
+          {
+               username="";
+               username=username+uresult[0].Fname+" "+uresult[0].Lname;
+          });  
+          res.render("Add",{username:username,usermail:result[0].uname});
+        }
     });
 });
 Router.get("/campground",function(req,res)
@@ -35,8 +43,18 @@ Router.get("/campground",function(req,res)
             uname=result[0].uname;
         }
         conn.query("Select * from CampGround order by Name",function(error,result,fields)
-        {  
-              res.render("camp",{camp:result,state:state,username:uname,success:req.flash("success")});
+        { 
+          if(state=="logged in")
+          {  
+           conn.query("select * from user where username='"+uname+"'",function(err,uresult,fields)
+           {
+               username="";
+               username=username+uresult[0].Fname+" "+uresult[0].Lname;
+               res.render("camp",{camp:result,state:state,username:username,success:req.flash("success"),usermail:uname});
+           });
+          }
+          else
+            res.render("camp",{camp:result,state:state,username:"",success:req.flash("success"),usermail:""});
         });   
     });              
 });
@@ -73,21 +91,31 @@ Router.get("/campground/:id",function(req,res)
     var user=req.headers["user-agent"];
     var validuser=encrypt(IP+""+user);
     var state="";
-    var username="";
+    var uname="";
     conn.query("select * from state where IP='"+IP+"'"+"and sessid='"+validuser+"'",function(error,result,fields)
     {
         if(result.length==0)
           state="not logged in";
         else
         {  state="logged in";
-          username=result[0].uname;
+          uname=result[0].uname;
         } 
         var query="select * from CampGround C where C.Name="+"'"+req.params.id+"'";
         conn.query(query,function(error,campresult,fields)
         {
            conn.query("select * from Comments where CampName='"+req.params.id+"'",function(error,result,fields)
            {
-             res.render("specific",{campres:campresult,state:state,username:username,commentres:result});
+            if(state=="logged in")
+           {  
+           conn.query("select * from user where username='"+uname+"'",function(err,uresult,fields)
+           {
+               username="";
+               username=username+uresult[0].Fname+" "+uresult[0].Lname;
+               res.render("specific",{campres:campresult,state:state,username:username,commentres:result,usermail:uname});
+           });
+          }
+         else 
+          res.render("specific",{campres:campresult,state:state,username:username,commentres:result});
            });
         });      
     }); 

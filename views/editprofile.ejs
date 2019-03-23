@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>
+        YelpCamp
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/2x/camping-tent.png">
+    </head>
+    <body>    
+    <h1 id="addnew">Edit user - <%=result[0].username%></h1>
+<div id="frm">
+<form action="/editprofile/<%=result[0].username%>?_method=PUT" method="POST">
+  <input type="text" name="firstname" id="cmpfirst" value="<%=result[0].Fname%>"><br>
+  <input type="text" name="lastname" id="cmplast" value="<%=result[0].Lname%>"><br>   
+ <input type="email" name="username" id="cmpname" value="<%=result[0].username%>" readonly><br>
+ <input type="submit" value="Update" id="sub">
+</form>
+</div>
+<a href="/campground" id="goback">Go back</a>
+</body>
+</html>

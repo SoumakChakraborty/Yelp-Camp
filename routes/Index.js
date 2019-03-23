@@ -3,6 +3,7 @@ var Router=express.Router();
 var conn=require("../Campground");
 var encrypt=require("../modules/Encrypt");
 var uname="";
+var username="";
 var usermail="";
 var email=require("emailjs");
 var count=0;
@@ -16,6 +17,8 @@ Router.get("/signup",function(req,res)
 });
 Router.post("/signup",function(req,res)
 {
+    var firstname=req.body.firstname;
+    var lastname=req.body.lastname;
     var user=req.body.username;
     var pass=req.body.pass;
     var firstencrypt=encrypt(pass);
@@ -30,7 +33,7 @@ Router.post("/signup",function(req,res)
         }
         else
         {
-            conn.query("insert into User values("+"'"+user+"'"+","+"'"+secondencrypt+"'"+")",function(error,result,fields)
+            conn.query("insert into User values("+"'"+user+"'"+","+"'"+secondencrypt+"'"+","+"'"+firstname+"'"+","+"'"+lastname+"'"+")",function(error,result,fields)
            {
            });
            res.redirect("/signin"); 
@@ -66,6 +69,10 @@ Router.post("/signin",function(req,res)
          
     });
     uname=user;
+    conn.query("select * from user where username='"+user+"'",function(err,result,fields)
+    {
+         username=username+result[0].Fname+" "+result[0].Lname;
+    });
 });
 Router.get("/save",function(req,res)
 {
@@ -81,7 +88,7 @@ Router.get("/save",function(req,res)
         if(error)
           console.log(error);
       });
-      var msg="Signed in as "+uname;
+      var msg="Signed in as "+username;
       req.flash("success",msg);
       res.redirect("/campground");
     }
@@ -139,5 +146,40 @@ Router.put("/resetpass",function(req,res)
       {
       });
       res.redirect("/signin");
+});
+Router.get("/editprofile/:id",function(req,res)
+{
+   conn.query("select * from User where username='"+req.params.id+"'",function(err,result,fields)
+   {
+      res.render("editprofile",{result:result});
+   }); 
+});
+Router.put("/editprofile/:id",function(req,res)
+{
+     var firstname=req.body.firstname;
+     var lastname=req.body.lastname;
+     conn.query("update User set Fname='"+firstname+"'"+"where username='"+req.params.id+"'",function(err,result,fields)
+     {
+     });
+     conn.query("update User set Lname='"+lastname+"'"+"where username='"+req.params.id+"'",function(err,result,fields)
+     {
+     }); 
+     res.redirect("/campground");
+});
+Router.get("/changepassword/:id",function(req,res)
+{
+      res.render("changepassword",{username:req.params.id}); 
+});
+Router.put("/changepassword/:id",function(req,res)
+{
+    var password=req.body.pass;
+  var firstencrypt=encrypt(pass);
+  firstencrypt="P"+firstencrypt+"D";
+  var secondencrypt=encrypt(firstencrypt);
+  
+     conn.query("update User set password='"+secondencrypt+"'"+"where username='"+req.params.id+"'",function(err,result,fields)
+     {
+     }); 
+     res.redirect("/campground");
 });
 module.exports=Router;
