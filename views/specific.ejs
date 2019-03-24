@@ -42,7 +42,7 @@
                  <img src="<%=campres[0].URL%>" id="Yelpimg1">
                  <p class="Name"><a href="#" id="showname"><%=campres[0].Name%></a></p>
                  <p class="Name"><%=campres[0].Description%></p>
-                <%if(username==campres[0].user){%> 
+                <%if(usermail==campres[0].user){%> 
                  <div id="manipulate">    
                  <a href="/campground/<%=campres[0].Name%>/Update" id="editcamp">Edit campground</a>
                  </div>
@@ -56,7 +56,7 @@
                 <a href="/campground/<%=campres[0].Name%>/comment" id="addcom">Comment</a>
                 <%for(var i=0;i<commentres.length;i++){%>
                         <p><%=commentres[i].uname%> - <%=commentres[i].Comment%></p>
-                    <%if(username==commentres[i].uname){%> 
+                    <%if(usermail==commentres[i].uname){%> 
                        <div id="editcomment">     
                         <a href="/campground/<%=commentres[i].commentID%>/commentUpdate" id="editcom">Edit comment</a>
                       </div> 
