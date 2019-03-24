@@ -71,6 +71,7 @@ Router.post("/signin",function(req,res)
     uname=user;
     conn.query("select * from user where username='"+user+"'",function(err,result,fields)
     {
+         username="";
          username=username+result[0].Fname+" "+result[0].Lname;
     });
 });
@@ -88,8 +89,11 @@ Router.get("/save",function(req,res)
         if(error)
           console.log(error);
       });
-      var msg="Signed in as "+username;
-      req.flash("success",msg);
+      if(req.flash("success").length==0)
+      {
+        var msg="Signed in as "+username;
+        req.flash("success",msg);
+      }
       res.redirect("/campground");
     }
      else      
